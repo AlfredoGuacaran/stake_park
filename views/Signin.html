@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+{% block container %}
+
+<div class="w-50 m-auto">
+
+  {% if errors != '' %}
+  <div class="alert alert-danger" role="alert">
+    {{errors}}
+  </div>
+  {% endif %}
+
+  {% if success != '' %}
+  <div class="alert alert-success" role="alert">
+    {{success}} <a href='/login' class="btn bg-dark rounded text-success m-auto">Ir a Login</a>
+  </div>
+  {% endif %}
+  <h2>👽 Bienvenido a LA NASA 👽</h2>
+  <form method="post" action="/signin" class="row my-5 border rounded p-5">
+    <h6 class="text-center mb-5 col-12">Registrese para poder pasar a evaluación</h6>
+    <div class="col col-4">Email:</div>
+    <div class="col col-8">
+      <input required name="email" type="email" class="form-control" id="email">
+    </div>
+    <div class="col col-4">Nombre:</div>
+    <div class="col col-8">
+      <input required name="name" type="text" class="form-control" id="name">
+    </div>
+    <div class="col col-4">Contraseña:</div>
+    <div class="col col-8">
+      <input required name="password" type="password" class="form-control" id="password">
+    </div>
+    <div class="col col-4">Contraseña:</div>
+    <div class="col col-8">
+      <input required name="password_confirm" type="password" class="form-control" id="password_confirm">
+    </div>
+    <div class="col-12 mt-5 d-flex">
+      <button class="btn bg-light rounded text-success m-auto">Registrarme</button>
+      <a href='/login' class="btn bg-dark rounded text-success m-auto">Ir a Login</a>
+    </div>
+  </form>
+
+</div>
+
+
+<style>
+  body {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 50px;
+  }
+
+  td,
+  th {
+    color: white;
+  }
+
+  .col {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+</style>
+{% endblock %}
