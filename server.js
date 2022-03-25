@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('static'));
 
 app.use(flash());
 
