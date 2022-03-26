@@ -1,0 +1,32 @@
+{% macro navbar(usuario) %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-opacity-25">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/index">Skate Park</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">Lista de participantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/datos">Actualizar datos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Administrar</a>
+                </li>
+            </ul>
+            <span class="navbar-text d-flex">
+                <p class="m-2">Hola, {{usuario.nombre}}</p>
+                <img src="/fotos_perfil/{{usuario.foto}}" class="img-fluid rounded-circle" alt="Foto skater"
+                    style="width: auto; height: 40px;">
+                <a class="nav-link" href="/login/salir">Salir</a>
+
+            </span>
+        </div>
+    </div>
+</nav>
+
+{% endmacro %}

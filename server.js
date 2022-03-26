@@ -1,9 +1,19 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const app = express();
-const routes = require('./routes');
+const routes = require('./routes/routes');
 const session = require('express-session');
 const flash = require('connect-flash');
+const expressFileUpload = require('express-fileupload');
+const fs = require('fs');
+
+app.use(
+  expressFileUpload({
+    limits: { fileSize: 5000000 },
+    abortOnLimit: true,
+    responseOnLimit: 'Peso del archivo mayor al permitido (5 MB)',
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
