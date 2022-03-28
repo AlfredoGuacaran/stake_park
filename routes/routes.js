@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { renderAdmin } = require('./admin.js');
-const { renderDatos } = require('./datos.js');
+const {
+  renderDatos,
+  actualizarUsuario,
+  eliminarUsuario,
+} = require('./datos.js');
 const { renderIndex } = require('./index.js');
 const { renderLogin } = require('./login.js');
 const { renderRegistro, crearUsuario } = require('./registro.js');
@@ -18,5 +22,7 @@ router.get('/', renderIndex);
 router.post('/registro', crearUsuario);
 router.post('/login', loguearUsuario);
 router.get('/login/salir', salirUsuario);
+router.post('/datos/actualizar', actualizarUsuario);
+router.post('/datos/eliminar', eliminarUsuario);
 
 module.exports = router;

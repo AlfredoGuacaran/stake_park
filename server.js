@@ -5,7 +5,6 @@ const routes = require('./routes/routes');
 const session = require('express-session');
 const flash = require('connect-flash');
 const expressFileUpload = require('express-fileupload');
-const fs = require('fs');
 
 app.use(
   expressFileUpload({
